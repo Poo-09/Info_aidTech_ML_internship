@@ -1,0 +1,30 @@
+The recommendation system suggests movies to a user based on their input of a favorite movie title.
+Here is a breakdown of what each section of the code is doing:
+
+1. Importing Dependencies: The necessary libraries such as pandas, difflib, and scikit-learns TfidfVectorizer and cosine_similarity are imported.
+
+2. Data Collection and Pre-processing: The code starts by loading movie data from a CSV file using pandas. It then selects relevant features for recommendation, such as genres, keywords, tagline, cast, and director. Null values in these selected features are filled with empty strings. The selected features are combined into a single string for each movie.
+
+3. Text Data to Feature Vectors: The combined text data is converted into numerical feature vectors using TF-IDF vectorization. The TfidfVectorizer from scikit-learn is used for this purpose.
+
+4. Cosine Similarity Calculation: Cosine similarity is calculated between the feature vectors of all movies. The resulting similarity matrix is a square matrix where each element represents the similarity score between two movies based on their feature vectors.
+
+5. Getting the Movie Name from the User: The user is prompted to enter their favorite movies name.
+
+6. Finding Close Match: The input movie name is matched with the list of all movie titles using the get_close_matches function from the difflib module. This is done to handle minor variations in movie title input.
+
+7. Finding the Index of the Movie: The index of the movie with the closest title match is retrieved from the dataset.
+
+8. Calculating Similarity Scores: The similarity scores between the selected movie and all other movies are extracted from the similarity matrix.
+
+9. Sorting Similar Movies: The list of similarity scores is sorted in descending order to find movies with the highest similarity.
+
+10. Displaying Recommended Movies: The code prints a list of movies that are most similar to the users favorite movie, based on the calculated similarity scores.
+
+11. Recommending Movies to the User: The code prompts the user to enter their favorite movies name and then uses the same process to recommend similar movies.
+
+The recommendation system works by calculating the cosine similarity between the feature vectors of movies. Movies with higher cosine similarity scores have similar content in terms of genres, keywords, taglines, cast, and directors. This content-based approach recommends movies that share similar characteristics with the user's favorite movie.
+
+
+
+
